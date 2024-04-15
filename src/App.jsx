@@ -1,9 +1,14 @@
+import Home from "./pages/Home";
+import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile"
+import {Routes , Route} from 'react-router-dom'
 function App() {
     return (
-        <div className="w-full h-screen flex justify-center items-center bg-gray-800">
-            <Profile />
-        </div>
+        <Routes>
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/" element={<Home />}/>
+            <Route path="*" element={<NotFound />}/>
+        </Routes>
     );
 }
 
